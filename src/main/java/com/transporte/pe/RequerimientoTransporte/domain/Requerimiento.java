@@ -119,31 +119,38 @@ public class Requerimiento {
     }
 
     public Date getFechaRequerimiento() {
-        return fechaRequerimiento;
+       // return DateUtil.getCalculateDaysDate(fechaRequerimiento,1);
+        return this.fechaRequerimiento;
     }
 
     public void setFechaRequerimiento(Date fechaRequerimiento) {
 
-        this.fechaRequerimiento =DateUtil.getCalculateDaysDate(fechaRequerimiento,1);
+        //this.fechaRequerimiento =DateUtil.getCalculateDaysDate(fechaRequerimiento,1);
+        this.fechaRequerimiento= fechaRequerimiento;
     }
 
     public Date getFechaIda() {
-        return fechaIda;
+        //return DateUtil.getCalculateDaysDate(fechaIda,1);
+        return this.fechaIda;
     }
 
     public void setFechaIda(Date fechaIda) {
 
-        this.fechaIda =  DateUtil.getCalculateDaysDate(fechaIda,1);
+       // this.fechaIda =  DateUtil.getCalculateDaysDate(fechaIda,1);
+        this.fechaIda=fechaIda;
     }
 
     public Date getFechaRetorno() {
-        return fechaRetorno;
+
+        //return DateUtil.getCalculateDaysDate(fechaRetorno,1);
+        return this.fechaRetorno;
     }
 
     public void setFechaRetorno(Date fechaRetorno) {
 
 
-        this.fechaRetorno = DateUtil.getCalculateDaysDate(fechaRetorno,1);
+       // this.fechaRetorno = DateUtil.getCalculateDaysDate(fechaRetorno,1);
+        this.fechaRetorno=fechaRetorno;
     }
 
     public String getDescripcion() {

@@ -25,6 +25,15 @@ public class RequerimientoController {
         return requerimientoService.getAllRequerimiento();
     }
 
+
+    @RequestMapping(value = "/all/solicitudes",method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Requerimiento> getAllRequerimientosEntreFechasSolicitud(
+            @RequestParam(value = "fi") String fechInicio, @RequestParam(value = "ff") String fechaFin
+    ){
+        return requerimientoService.getAllRequerimientoEntreFechasSolicitud(fechInicio,fechaFin);
+    }
+
     @RequestMapping(value = "/all/descendente",method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Requerimiento> getAllRequerimientosDescendente(){
@@ -66,6 +75,16 @@ public class RequerimientoController {
         Usuario usuario=new Usuario();
         usuario.setIdUsuario(id);
         return requerimientoService.getAllRequerimientosByUsuario(usuario);
+    }
+
+    @RequestMapping(value = "/usuario/{id}/fecha",method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Requerimiento> getAllRequerimientosByUsuarioYFecha(@PathVariable Long id,
+                                                             @RequestParam(value = "fi") String fechaInicio, @RequestParam(value = "ff") String fechaFin
+    ){
+        Usuario usuario=new Usuario();
+        usuario.setIdUsuario(id);
+        return requerimientoService.getAllRequerimientosByUsuarioAndFechaSolicitud(usuario,fechaInicio,fechaFin);
     }
 
     @RequestMapping(value = "/aprobados",method = RequestMethod.GET)
